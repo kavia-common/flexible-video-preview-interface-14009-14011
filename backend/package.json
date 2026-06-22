@@ -1,0 +1,23 @@
+{
+  "name": "webcam-filters-backend",
+  "version": "0.1.0",
+  "description": "Node.js backend for Webcam Filters app (presets + snapshot metadata, MongoDB)",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js --watch .",
+    "test": "echo \"(tests not implemented in this step)\"",
+    "build": "echo \"no build step\""
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "4.21.2",
+    "mongodb": "^6.8.0",
+    "uuid": "^9.0.1",
+    "ws": "^8.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
