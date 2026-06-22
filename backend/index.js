@@ -56,6 +56,7 @@ app.use(express.json({ limit: "1mb" }));
 // PUBLIC_INTERFACE
 app.get("/", (req, res) => {
   /** Basic landing response for the backend service. */
+  const wsEnabled = String(process.env.WS_ENABLED ?? "true").toLowerCase() !== "false";
   res.json({
     service: "webcam-filters-backend",
     status: "ok",
@@ -63,8 +64,9 @@ app.get("/", (req, res) => {
       health: process.env.HEALTHCHECK_PATH || "/healthz",
       presets: "/api/presets",
       snapshots: "/api/snapshots",
-      websocket: process.env.WS_URL || "/ws"
-    }
+      websocket: "/ws",
+      wsEnabled
+    },
   });
 });
 
